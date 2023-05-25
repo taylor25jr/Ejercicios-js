@@ -14,16 +14,17 @@ random();
 
 //solucion 10
 
-const leer = (num = '') => {
+const leer = (num = 0) => {
 
 
+num = num.toString();
 let capicuo = num.split('').reduce((element,index) => index + element, '')
 
 if(!num) return console.log('no has ingresado nada')
 if(num === capicuo) console.log('Es capicuo')
 else console.log('no es capicuo');}
 
-leer('')
+leer(23)
 
 //SOLUCION 11
 
