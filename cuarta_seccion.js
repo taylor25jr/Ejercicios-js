@@ -19,11 +19,16 @@ verify()
 
 const grados = (grade, type = '') => {
 
+    let Fahrenheit = grade;
+    let Celsius = grade
+    let calculoCelsius = (Fahrenheit - 32) * 5/9;
+    let calculoFahrenheit = (Celsius * 9/5) +32
+
     if(!grade) console.log('ingrese un valor a convertir');
     if(!type) console.log('ingrese una unida a convertir');
     if(typeof grade != 'number') console.log('ingrese un numero');
     if(typeof type != 'string') console.log('indique la unidad de medida en string');
-
-}
+    if(type.toUpperCase() === 'C' ) console.log(calculoCelsius);
+    if(type.toUpperCase() === 'F') console.log(calculoFahrenheit);}
 
 grados();
