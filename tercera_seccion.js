@@ -27,19 +27,11 @@ leer('')
 
 //SOLUCION 11
 
+const factorial = (numero) => {
 
-
-const factorial = (numero = []) => {
-
-    let result = 1;
-
-    for (let i = 1;i <= numero;i++){
-        
-
-
-        console.log(i)
-    }
-   
- }
+    let x = 1;
+    for (let i = 1;i <= numero ;i++){ x *= i;}
+    console.log(x)}
 
  factorial(5)
+
