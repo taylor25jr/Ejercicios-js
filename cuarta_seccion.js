@@ -5,14 +5,29 @@ pe. miFuncion(7) devolverá true.
 14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
 */
 
+//SOLUCION 12
+
+const primo = (numero = undefined) => {
+    let divisores = [];
+
+    for (let i = 0; i <= numero; i++) {
+        if (numero % i === 0) divisores.push(i)
+    }
+
+    if (divisores.length === 2) console.log('es primo');
+    console.log(divisores);
+
+}
+primo(7)
+
 //SOLUCION 13
-const verify = (num = undefined) => 
-(num === undefined) ? console.log('ingresa un numero') 
-:(typeof num !== 'number') ? console.log('solo numeros')
-: (num % 2 === 0) ? console.log('es par')
-:(num % 2 != 0) ? console.log('es impar')
-: console.log();
-    
+const verify = (num = undefined) =>
+    (num === undefined) ? console.log('ingresa un numero')
+        : (typeof num !== 'number') ? console.log('solo numeros')
+            : (num % 2 === 0) ? console.log('es par')
+                : (num % 2 != 0) ? console.log('es impar')
+                    : console.log();
+
 verify()
 
 //SOLUCION 14
@@ -21,14 +36,15 @@ const grados = (grade, type = '') => {
 
     let Fahrenheit = grade;
     let Celsius = grade
-    let calculoCelsius = (Fahrenheit - 32) * 5/9;
-    let calculoFahrenheit = (Celsius * 9/5) +32
+    let calculoCelsius = (Fahrenheit - 32) * 5 / 9;
+    let calculoFahrenheit = (Celsius * 9 / 5) + 32
 
-    if(!grade) console.log('ingrese un valor a convertir');
-    if(!type) console.log('ingrese una unida a convertir');
-    if(typeof grade != 'number') console.log('ingrese un numero');
-    if(typeof type != 'string') console.log('indique la unidad de medida en string');
-    if(type.toUpperCase() === 'C' ) console.log(calculoCelsius);
-    if(type.toUpperCase() === 'F') console.log(calculoFahrenheit);}
+    if (!grade) console.log('ingrese un valor a convertir');
+    if (!type) console.log('ingrese una unida a convertir');
+    if (typeof grade != 'number') console.log('ingrese un numero');
+    if (typeof type != 'string') console.log('indique la unidad de medida en string');
+    if (type.toUpperCase() === 'C') console.log(calculoCelsius);
+    if (type.toUpperCase() === 'F') console.log(calculoFahrenheit);
+}
 
 grados();
