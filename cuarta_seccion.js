@@ -14,11 +14,13 @@ const primo = (numero = undefined) => {
         if (numero % i === 0) divisores.push(i)
     }
 
-    if (divisores.length === 2) console.log('es primo');
+    if (!numero ) return console.log('Ingresa un numero');
+    if (divisores.length === 2) console.log('true');
+    else{console.log('false')}
     console.log(divisores);
 
 }
-primo(7)
+primo()
 
 //SOLUCION 13
 const verify = (num = undefined) =>
@@ -36,15 +38,16 @@ const grados = (grade, type = '') => {
 
     let Fahrenheit = grade;
     let Celsius = grade
-    let calculoCelsius = (Fahrenheit - 32) * 5 / 9;
-    let calculoFahrenheit = (Celsius * 9 / 5) + 32
+    let calculoCelsius = Math.round((Fahrenheit - 32) * 5 / 9)
+    let calculoFahrenheit = Math.round((Celsius * 9 / 5) + 32)
 
     if (!grade) console.log('ingrese un valor a convertir');
     if (!type) console.log('ingrese una unida a convertir');
     if (typeof grade != 'number') console.log('ingrese un numero');
     if (typeof type != 'string') console.log('indique la unidad de medida en string');
-    if (type.toUpperCase() === 'C') console.log(calculoCelsius);
-    if (type.toUpperCase() === 'F') console.log(calculoFahrenheit);
+    if(type.length !== 1) return console.log('Valor de unidad no reconocido')
+    if (type.toUpperCase() === 'C') console.log(`Son ${calculoCelsius}º Celsius`);
+    if (type.toUpperCase() === 'F') console.log(`Son ${calculoFahrenheit}º Fahrenheit`);
 }
 
-grados();
+grados(2,'c');
