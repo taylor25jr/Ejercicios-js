@@ -7,22 +7,19 @@
 
 //SOLUCION 21
 
-const cuadrado = (array) => {
+const cuadrado = (array = undefined) => {
     let con = array.toString().split('');
 
-    let elevacion = [];
-
-    for (const i of con) {
-        elevacion.push(i ** 2)
-    }
+    let elevacion = con.map(el => el ** 2);
 
     (!array) ? console.log('ingresa los numeros a elevar al cuadrado')
-        : (typeof array !== 'number') ? console.log('ingresa solo numeros')
-            : (Math.sign(array) === -1) ? console.log('ingresa solo numeros positivos')
-                : console.log(elevacion)
+        : (!(array instanceof Array)) ? console.log('ingresa un array valido')
+            : (array.length === 0) ? console.log('el arreglo esta vacio')
+                : (Math.sign(array) === -1) ? console.log('ingresa solo numeros positivos')
+                    : console.log(elevacion)
 }
 
-cuadrado(145);
+cuadrado([]);
 
 //SOLUICION 22
 
